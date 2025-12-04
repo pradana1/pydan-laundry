@@ -21,4 +21,13 @@ class Expense extends Model
     public function category_expenses() {
         return $this->belongsTo('CategoryPackage::class');
     }
+
+    public function scopeByOutlet($query)
+    {
+        if (!auth()->user()->can('admin')) {
+            $query->where('outlet_id', auth()->user()->outlet_id);
+        }
+
+        return $query;
+    }
 }

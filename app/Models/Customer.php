@@ -21,5 +21,14 @@ class Customer extends Model
     public function transactions() {
         return $this->hasMany('Transaction::class');
     }
+
+    public function scopeByOutlet($query)
+    {
+        if (!auth()->user()->can('admin')) {
+            $query->where('outlet_id', auth()->user()->outlet_id);
+        }
+
+        return $query;
+    }
 }
 
