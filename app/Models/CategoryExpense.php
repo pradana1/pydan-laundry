@@ -10,4 +10,8 @@ class CategoryExpense extends Model
         'name',
         'description',
     ];
+
+    public function expenses() {
+        return $this->hasMany('Expense::class');
+    }
 }

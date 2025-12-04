@@ -13,4 +13,12 @@ class Expense extends Model
         'description',
         'expense_date',
     ];
+
+    public function outlet() {
+        return $this->belongsTo('Outlet::class');
+    }
+
+    public function category_expenses() {
+        return $this->belongsTo('CategoryPackage::class');
+    }
 }

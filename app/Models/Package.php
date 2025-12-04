@@ -13,4 +13,12 @@ class Package extends Model
         'name',
         'price',
     ];
+
+    public function outlet() {
+        return $this->belongsTo('Outlet::class');
+    }
+
+    public function category_package() {
+        return $this->belongsTo('CategoryPackage::class');
+    }
 }

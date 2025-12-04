@@ -12,4 +12,12 @@ class TransactionDetail extends Model
         'quantity',
         'total',
     ];
+
+    public function transaction() {
+        return $this->belongsTo('Transaction::class');
+    }
+
+    public function packages() {
+        return $this->belongsTo('Package::class');
+    }
 }

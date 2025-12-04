@@ -10,4 +10,9 @@ class CategoryPackage extends Model
         'name',
         'description',
     ];
+
+    public function packages() {
+        return $this->hasMany(Package::class);
+    }
+
 }

@@ -13,4 +13,13 @@ class Customer extends Model
         'phone',
         'address',
     ];
+
+    public function outlet() {
+        return $this->belongsTo('Outlet::class');
+    }
+
+    public function transactions() {
+        return $this->hasMany('Transaction::class');
+    }
 }
+
