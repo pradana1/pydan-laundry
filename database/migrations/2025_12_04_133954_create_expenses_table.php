@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('expense_date');
             $table->timestamps();
 
-            $table->foreign('outlet_id')->references('id')->on('outlets')->on('casecade');
-            $table->foreign('category_expense_id')->references('id')->on('category_expenses')->onDelete('casecade');
+            $table->foreign('outlet_id')->references('id')->on('outlets')->onDelete('cascade');
+            $table->foreign('category_expense_id')->references('id')->on('category_expenses')->onDelete('cascade');
         });
     }
 

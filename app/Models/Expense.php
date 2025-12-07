@@ -18,8 +18,8 @@ class Expense extends Model
         return $this->belongsTo('Outlet::class');
     }
 
-    public function category_expenses() {
-        return $this->belongsTo('CategoryPackage::class');
+    public function category_expense() {
+        return $this->belongsTo('CategoryExpense::class');
     }
 
     public function scopeByOutlet($query)

@@ -25,14 +25,14 @@ return new class extends Migration
             $table->integer('tax_percent')->default(0);
             $table->decimal('tax_amount', 8, 2)->default(0);
             $table->integer('discount_percent')->default(0);
-            $table->integer('discount_amount', 8, 2)->default(0);
-            $table->integer('additional_fee', 8, 2)->default(0);
-            $table->integer('total_price', 8, 2)->default(0);
+            $table->decimal('discount_amount', 8, 2)->default(0);
+            $table->decimal('additional_fee', 8, 2)->default(0);
+            $table->decimal('total_price', 8, 2)->default(0);
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('outlet_id')->references('id')->on('outlets');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('outlet_id')->references('id')->on('outlets')->onDelete('cascade');
         });
     }
 

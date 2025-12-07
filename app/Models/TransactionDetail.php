@@ -17,7 +17,7 @@ class TransactionDetail extends Model
         return $this->belongsTo('Transaction::class');
     }
 
-    public function packages() {
+    public function package() {
         return $this->belongsTo('Package::class');
     }
 }

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('outlet_id')->references('id')->on('outlets')->onDelete('cascade');
-            $table->foreign('category_package_id')->references('id')->on('category_package')->onDelete('cascade');
+            $table->foreign('category_package_id')->references('id')->on('category_packages')->onDelete('cascade');
+
         });
     }
 

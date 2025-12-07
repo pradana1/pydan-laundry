@@ -16,11 +16,12 @@ return new class extends Migration
             $table->unsignedBigInteger('transaction_id');
             $table->unsignedBigInteger('package_id');
             $table->integer('quantity');
-            $table->integer('total', 8, 2);
+            $table->decimal('total', 8, 2);
             $table->timestamps();
             
             $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
+
         });
     }
 
